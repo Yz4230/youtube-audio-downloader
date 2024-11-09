@@ -1,0 +1,23 @@
+{
+  "name": "youtube-audio-downloader",
+  "scripts": {
+    "dev:index": "bun run --hot src/index.tsx",
+    "dev:tailwind": "bun run tailwind -i src/tailwind.css -o public/styles.css -w",
+    "dev": "conc bun:dev:index bun:dev:tailwind",
+    "build:index": "bun build src/index.tsx --outfile dist/index.js",
+    "build:tailwind": "bun run tailwind -i src/tailwind.css -o dist/public/styles.css",
+    "build": "conc bun:build:index bun:build:tailwind"
+  },
+  "dependencies": {
+    "cheerio": "^1.0.0",
+    "hono": "^4.6.9",
+    "sanitize-filename": "^1.6.3",
+    "zod": "^3.23.8"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^1.9.4",
+    "@types/bun": "^1.1.13",
+    "concurrently": "^9.1.0",
+    "tailwindcss": "^3.4.14"
+  }
+}
